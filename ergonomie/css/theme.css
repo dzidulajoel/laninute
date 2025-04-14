@@ -1,0 +1,32 @@
+
+:root{
+    --color1:#FF6F00; 
+    --color2:#1E3A8A; 
+    --color3:#fff;
+    --color4:#151515;
+    --box-shadow-container: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+    --border-raduis-externe:24px;
+    --border-raduis-interne:14px;
+    --padding:10px;
+}
+
+
+.theme_button_active{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    background-color: var(--color3);
+}
+
+.theme_button_active .theme_button{
+    background-color: var(--color4);
+}
+.index_theme{
+    background-color: var(--color4);
+}
+
+.btn_navigations button .active{
+    color: #FF6F00;
+    font-weight: bolder;
+}
+

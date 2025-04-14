@@ -1,0 +1,465 @@
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --color1: #FF6F00;
+    --color2: #1E3A8A;
+    --color4: #151515;
+    --color3: #fff;
+
+    --color3-glass:hsla(60, 100%, 95%, 0.15);
+    --color4-glass:hsla(260, 3%, 21%, 0.15); 
+
+    --box-shadow-container: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+    --border-raduis-externe: 24px;
+    --border-raduis-interne: 14px;
+    --padding: 10px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.index {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 10fr 1fr;
+    grid-template-areas:
+        "nav"
+        "main"
+        "footer";
+    background-color: var(--color3);
+    transition: all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+    position: relative;
+}
+
+
+
+nav {
+    grid-area: "nav";
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 122px;
+    position: relative;
+    width: 100%;
+}
+
+
+footer {
+    grid-area: "footer";
+    background-color: var(--color4);
+    padding: 0 122px;
+}
+
+main {
+    grid-area: 'main';
+    padding: 0 122px;
+}
+
+
+/*==========NAV==========*/
+.logo img {
+    width: 120px;
+}
+
+
+.theme {
+    width: 50px;
+    height: 25px;
+    background-color: var(--color4);
+    border-radius: 24px;
+    -webkit-border-radius: 24px;
+    -moz-border-radius: 24px;
+    -ms-border-radius: 24px;
+    -o-border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 3px;
+    box-shadow: var(--box-shadow-container);
+    transition: all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+    cursor: pointer;
+}
+
+.theme_button {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    background-color: #fff;
+    transition: all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+}
+
+/*==========CONNEXION=============*/
+
+.connexion_conteneur {
+    width: 400px;
+    height: 500px;
+    background-color: var(--color2);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    margin: 40px auto;
+    border-radius: var(--border-raduis-interne);
+    -webkit-border-radius: var(--border-raduis-interne);
+    -moz-border-radius: var(--border-raduis-interne);
+    -ms-border-radius: var(--border-raduis-interne);
+    -o-border-radius: var(--border-raduis-interne);
+}
+
+.connexion {
+    background-color: var(--color3);
+    box-shadow: var(--box-shadow-container);
+    height: 480px;
+    border-bottom-right-radius: 30%;
+    border-bottom-left-radius: 30%;
+    padding: 10px;
+
+}
+
+form h3 {
+    font-family: 'Satoshi', sans-serif;
+    color: var(--color4);
+    font-size: 1.6rem;
+    text-align: center;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.inputElement {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.inputElement input {
+    border: none;
+    height: 40px;
+    outline: none;
+    box-shadow: var(--box-shadow-container);
+    font-family: 'Satoshi', sans-serif;
+    font-size: 1rem;
+    color: var(--color4);
+    padding-left: 20px;
+    background-color: transparent;
+    border-radius: var(--border-raduis-interne);
+}
+
+input::placeholder{
+    color: var(--color4);
+}
+
+input:focus{
+    background-color: var(--color3-glass);
+}
+.motDePasseOublie {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    font-family: 'Satoshi', sans-serif;
+    color: var(--color2);
+    font-weight: 400;
+}
+
+.btn_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 70px;
+}
+
+button[type="submit"] {
+    width: 80%;
+    height: 40px;
+    background-color: var(--color2);
+    color: var(--color3);
+    font-family: 'Satoshi', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    border: none;
+    box-shadow: var(--box-shadow-container);
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    border-radius: var(--border-raduis-interne);
+    -webkit-border-radius: var(--border-raduis-interne);
+    -moz-border-radius: var(--border-raduis-interne);
+    -ms-border-radius: var(--border-raduis-interne);
+    -o-border-radius: var(--border-raduis-interne);
+    cursor: pointer;
+}
+
+button[type="submit"]:hover,
+.valider:hover {
+    background-color: var(--color4);
+    color: var(--color3);
+    transform: translateY(-4px);
+    -webkit-transform: translateY(-4px);
+    -moz-transform: translateY(-4px);
+    -ms-transform: translateY(-4px);
+    -o-transform: translateY(-4px);
+}
+
+.btn_container a {
+    color: var(--color3);
+}
+
+.barre {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 12px;
+}
+
+.barre span {
+    width: 70px;
+    height: 2px;
+    background-color: var(--color4-glass);
+}
+
+.barre p,
+.connexion p {
+    font-family: 'Satoshi', sans-serif;
+    font-size: .8rem;
+    color: var(--color4);
+    text-align: center;
+}
+
+.others {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 30px;
+}
+
+.others a {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    background-color: var(--color3-glass);
+    box-shadow: var(--box-shadow-container);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    transition: background-color .5s;
+
+}
+
+.s_inscrire {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Satoshi', sans-serif;
+    color: var(--color2);
+    font-weight: 400;
+    margin-top: 10px;
+}
+
+
+
+/*==========INSCRIPTION=============*/
+.inputElement_inscrire {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.inputElement_inscrire input,
+select {
+    border: none;
+    height: 40px;
+    outline: none;
+    box-shadow: var(--box-shadow-container);
+    font-family: 'Satoshi', sans-serif;
+    font-size: 1rem;
+    color: var(--color4);
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: transparent;
+    border-radius: var(--border-raduis-interne);
+}
+
+
+
+.inscriptionContainer {
+    width: 400px;
+    height: 600px;
+    background-color: var(--color2);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    margin: 10px auto;
+    border-radius: var(--border-raduis-interne);
+    -webkit-border-radius: var(--border-raduis-interne);
+    -moz-border-radius: var(--border-raduis-interne);
+    -ms-border-radius: var(--border-raduis-interne);
+    -o-border-radius: var(--border-raduis-interne);
+}
+
+.inscription {
+    background-color: var(--color3);
+    box-shadow: var(--box-shadow-container);
+    height: 580px;
+    border-bottom-right-radius: 30%;
+    border-bottom-left-radius: 30%;
+    padding: 10px;
+}
+
+.inscription p {
+    font-family: 'Satoshi', sans-serif;
+    font-size: .8rem;
+    color: var(--color4);
+    text-align: center;
+}
+
+.btn_container_inscrire {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+
+
+/*==========RECUPERATION=============*/
+.recuperationConteneur {
+    width: 400px;
+    height: 500px;
+    background-color: var(--color2);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    margin: 10px auto;
+    border-radius: var(--border-raduis-interne);
+    -webkit-border-radius: var(--border-raduis-interne);
+    -moz-border-radius: var(--border-raduis-interne);
+    -ms-border-radius: var(--border-raduis-interne);
+    -o-border-radius: var(--border-raduis-interne);
+}
+
+.recuperation {
+    background-color: var(--color3);
+    box-shadow: var(--box-shadow-container);
+    height: 480px;
+    border-bottom-right-radius: 30%;
+    border-bottom-left-radius: 30%;
+    padding: 10px;
+}
+
+.inputElement_recuperation {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.inputElement_recuperation input {
+    border: none;
+    height: 40px;
+    outline: none;
+    box-shadow: var(--box-shadow-container);
+    font-family: 'Satoshi', sans-serif;
+    font-size: 1rem;
+    color: var(--color4);
+    padding-left: 20px;
+    background-color: transparent;
+    border-radius: var(--border-raduis-interne);
+}
+
+.code {
+    display: flex;
+    gap: 10px;
+
+}
+
+input[name="code"] {
+    width: 80%;
+}
+
+
+.valider {
+    width: 20%;
+    height: 40px;
+    background-color: var(--color2);
+    color: var(--color3);
+    font-family: 'Satoshi', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    border: none;
+    box-shadow: var(--box-shadow-container);
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    border-radius: var(--border-raduis-interne);
+    -webkit-border-radius: var(--border-raduis-interne);
+    -moz-border-radius: var(--border-raduis-interne);
+    -ms-border-radius: var(--border-raduis-interne);
+    -o-border-radius: var(--border-raduis-interne);
+    cursor: pointer;
+}
+
+.others_recuperation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    gap: 30px;
+}
+
+
+.others_recuperation a {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    background-color: var(--color3-glass);
+    box-shadow: var(--box-shadow-container);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    transition: background-color .5s;
+    -webkit-transition: background-color .5s;
+    -moz-transition: background-color .5s;
+    -ms-transition: background-color .5s;
+    -o-transition: background-color .5s;
+}
+
+.others_recuperation a:hover,
+.others a:hover {
+    background-color: var(--color4);
+}
