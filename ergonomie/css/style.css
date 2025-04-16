@@ -5,7 +5,7 @@ html {
 :root {
     --color1: #FF6F00;
     --color2: #1E3A8A;
-    --color4: #151515;
+    --color4: #2C2C2C;
     --color3: #fff;
 
     --color3-glass:hsla(60, 100%, 95%, 0.15);
@@ -28,11 +28,10 @@ html {
     height: 100vh;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 10fr 1fr;
+    grid-template-rows: 1fr 11fr;
     grid-template-areas:
         "nav"
-        "main"
-        "footer";
+        "main";
     background-color: var(--color3);
     transition: all .5s;
     -webkit-transition: all .5s;
@@ -40,6 +39,8 @@ html {
     -ms-transition: all .5s;
     -o-transition: all .5s;
     position: relative;
+    gap: 20px;
+    padding-bottom: 40px;
 }
 
 
@@ -55,19 +56,47 @@ nav {
 }
 
 
-footer {
-    grid-area: "footer";
-    background-color: var(--color4);
-    padding: 0 122px;
-}
 
 main {
     grid-area: 'main';
     padding: 0 122px;
+    position: relative;
+}
+
+/*==========NAV==========*/
+.toast{
+    width: 400px;
+    height: 40px;
+    margin: auto;
+}
+
+.toast span, .toast a{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color3);
+    font-family: 'Satoshi', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: #2C2C2C;
+}
+
+.toast span a{
+    color: var(--color3);
+}
+
+.toast .reussie{
+    background-color: rgba(32, 201, 150, 0.5);
+}
+
+.toast .echoue{
+    background-color: rgba(220, 53, 70, 0.5);
 }
 
 
-/*==========NAV==========*/
+
 .logo img {
     width: 120px;
 }
@@ -216,11 +245,6 @@ button[type="submit"]:hover,
 .valider:hover {
     background-color: var(--color4);
     color: var(--color3);
-    transform: translateY(-4px);
-    -webkit-transform: translateY(-4px);
-    -moz-transform: translateY(-4px);
-    -ms-transform: translateY(-4px);
-    -o-transform: translateY(-4px);
 }
 
 .btn_container a {
@@ -244,7 +268,7 @@ button[type="submit"]:hover,
 .barre p,
 .connexion p {
     font-family: 'Satoshi', sans-serif;
-    font-size: .8rem;
+    font-size: .9rem;
     color: var(--color4);
     text-align: center;
 }

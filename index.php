@@ -50,15 +50,15 @@ if (isset($_POST["se_connecetr"])) {
         // $count_verif = $requete_bd_table_connexion->rowCount();
         // VERIFIER SI LE LOGIN ET MOT DE PASSE EXISTE DOIT RETOUR 1
         if (password_verify($mot_de_passe, $data_get_mot_de_passe_crypte_from_bd['mot_de_passe'])) {
-            $message_operation = "Connexion reussie";
-            header('location:admin/');
+            $message_operation = '<span class="reussie">Connexion reussie</span>';
+            header('location:accueil/');
         } 
         else {
-            $message_operation = "mot de passe incorrect";
+            $message_operation = '<span class="echoue">mot de passe incorrect</span>';
         }
     } 
     else {
-        $message_operation = "Veuillez remplir tous les champs";
+        $message_operation = '<span class="echoue">Veuillez remplir tous les champs</span>';
     }
 }
 ?>
@@ -72,6 +72,7 @@ if (isset($_POST["se_connecetr"])) {
     <title>La minute</title>
     <link rel="stylesheet" href="./ergonomie/css/style.css">
     <link rel="stylesheet" href="./ergonomie/css/theme.css">
+    <link rel="stylesheet" href="./ergonomie/css/responsive.css">
     <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,700,900&f[]=general-sans@500,600,700,1&f[]=cabinet-grotesk@500,800,900&f[]=switzer@500&display=swap" rel="stylesheet">
 </head>
 
@@ -79,12 +80,12 @@ if (isset($_POST["se_connecetr"])) {
     <div class="index">
         <?php include("./composants/header.php") ?>
         <main>
+                        <!-- EMPLACEMENT DU TOASTER -->
+            <div class="toast"><?php echo $message_operation ?></div>
             <form class="connexion_conteneur" action="" method="post">
                 <div class="connexion">
                     <h3>Connexion à la minute</h3>
                     <p>Bienvenu, Heureux de vous revoir</p>
-                    <!-- EMPLACEMENT DU TOASTER -->
-                    <span><?php echo $message_operation ?></span>
                     <div class="inputElement">
                         <input type="text" name="nom" id="nom" placeholder="Nom d'utilisateur">
                         <input type="password" name="mot_de_passe" id="mot_de_passe" placeholder="Mot de passe">
@@ -113,7 +114,6 @@ if (isset($_POST["se_connecetr"])) {
                 </div>
             </form>
         </main>
-        <?php include("./composants/footer.php") ?>
 
     </div>
     <script src="./ergonomie/js/script.js"></script>

@@ -57,18 +57,18 @@
 
                     )
                 );
-                $message_operation = "Votre compte a ete cree avec Success";
+                $message_operation = '<a href="index.php" class="reussie">Creation reussie! Connectez-vous a votre compte</a>';
             }
 
             else{
-                $message_operation = "Utilisateur existe deja";
+                $message_operation = '<span class="echoue">Utilisateur existe deja</span>';
             }
 
 
 
         } 
         else {
-            $message_operation = "Veuillez remplir tous les champs";
+            $message_operation = '<span class="echoue">Veuillez remplir tous les champs</span>';
         }
     }
     ?>
@@ -81,6 +81,7 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>La minute</title>
      <link rel="stylesheet" href="./ergonomie/css/style.css">
+     <link rel="stylesheet" href="./ergonomie/css/responsive.css">
      <link rel="stylesheet" href="./ergonomie/css/theme.css">
      <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,700,900&f[]=general-sans@500,600,700,1&f[]=cabinet-grotesk@500,800,900&f[]=switzer@500&display=swap" rel="stylesheet">
  </head>
@@ -89,12 +90,12 @@
      <div class="index">
          <?php include("./composants/header.php") ?>
          <main>
+            <div class="toast"><?php echo $message_operation ?></div>
              <form class="inscriptionContainer" action="" method="post">
                  <div class="inscription">
                      <h3>Inscription à la minute</h3>
                      <p>Crée un profil, suis d'autres comptes, crée tes propres vidéos et bien plus encore.</p>
                      <!-- EMPLACEMENT DU TOASTER -->
-                     <span><?php echo $message_operation ?></span>
                      <div class="inputElement_inscrire">
                          <input type="text" name="nom" id="nom" placeholder="Nom d'utilisateur">
                          <input type="email" name="email" id="email" placeholder="Email">
@@ -129,7 +130,6 @@
                  </div>
              </form>
          </main>
-         <?php include("./composants/footer.php") ?>
      </div>
      <script src="./ergonomie/js/script.js"></script>
  </body>
